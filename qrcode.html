@@ -11,12 +11,12 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy:   #0a1628;
-    --blue:   #1a3a6e;
-    --sky:    #2563eb;
-    --gold:   #f0a500;
-    --cream:  #f8f4ee;
-    --white:  #ffffff;
+    --navy:  #0a1628;
+    --blue:  #1a3a6e;
+    --sky:   #2563eb;
+    --gold:  #f0a500;
+    --cream: #f8f4ee;
+    --white: #ffffff;
   }
 
   body {
@@ -34,7 +34,7 @@
     border-radius: 24px;
     box-shadow: 0 20px 60px rgba(10,22,40,0.14), 0 4px 12px rgba(10,22,40,0.08);
     overflow: hidden;
-    width: 360px;
+    width: 320px;
     animation: rise 0.6s cubic-bezier(.22,1,.36,1) both;
   }
 
@@ -45,7 +45,7 @@
 
   .header {
     background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-    padding: 28px 28px 22px;
+    padding: 26px 28px 22px;
     position: relative;
     overflow: hidden;
   }
@@ -83,7 +83,7 @@
 
   .title {
     font-family: 'DM Serif Display', serif;
-    font-size: 26px;
+    font-size: 24px;
     color: var(--white);
     line-height: 1.2;
     position: relative;
@@ -95,21 +95,11 @@
     color: #93c5fd;
   }
 
-  .subtitle {
-    font-size: 12.5px;
-    color: rgba(255,255,255,0.55);
-    margin-top: 6px;
-    font-weight: 300;
-    position: relative;
-    z-index: 1;
-  }
-
   .qr-wrap {
-    padding: 28px;
+    padding: 28px 28px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
   }
 
   .qr-frame {
@@ -120,7 +110,6 @@
     box-shadow: 0 0 0 1.5px rgba(10,22,40,0.08), 0 8px 24px rgba(10,22,40,0.10);
   }
 
-  /* Corner accent lines */
   .qr-frame::before,
   .qr-frame::after {
     content: '';
@@ -137,42 +126,9 @@
     border-radius: 4px;
   }
 
-  .scan-label {
-    font-size: 12px;
-    color: rgba(10,22,40,0.45);
-    text-align: center;
-    letter-spacing: 0.04em;
-  }
-
-  .url-pill {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    border-radius: 100px;
-    padding: 8px 14px;
-    width: 100%;
-  }
-
-  .url-icon {
-    width: 18px; height: 18px;
-    flex-shrink: 0;
-    color: var(--sky);
-  }
-
-  .url-text {
-    font-size: 11.5px;
-    color: var(--sky);
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   .footer {
     border-top: 1px solid rgba(10,22,40,0.06);
-    padding: 14px 28px;
+    padding: 12px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -204,22 +160,11 @@
   <div class="header">
     <div class="badge">Scan to Open</div>
     <div class="title">SLCC <em>English</em> App</div>
-    <div class="subtitle">Scan with your smartphone camera</div>
   </div>
 
   <div class="qr-wrap">
     <div class="qr-frame">
       <div id="qrcode"></div>
-    </div>
-
-    <p class="scan-label">Point your camera at the QR code to open the app</p>
-
-    <div class="url-pill">
-      <svg class="url-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-      </svg>
-      <span class="url-text">jp169zx-gh.github.io/en/</span>
     </div>
   </div>
 
@@ -232,8 +177,8 @@
 <script>
   new QRCode(document.getElementById("qrcode"), {
     text: "https://jp169zx-gh.github.io/en/",
-    width: 220,
-    height: 220,
+    width: 240,
+    height: 240,
     colorDark: "#0a1628",
     colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.M
